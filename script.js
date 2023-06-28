@@ -1,17 +1,8 @@
 //your JS code here. If required.
-let colorSelect = document.getElementById('colorSelect');
-// console.log(colorSelect);
+const colorSelect = document.getElementById("colorSelect");
+const removeButton = document.getElementsByTagName("input")[0];
 
-function removeColor() {
-    let optionValue = colorSelect.value;
-    // console.log(optionValue);
-    let options = document.getElementsByTagName('option');
-    // console.log(options[3].value);
-
-    for (let option of options) {
-        if (option.value === optionValue) {
-            // console.log(option.value);
-            option.remove();
-        }
-    }
-}
+removeButton.addEventListener("click", function () {
+	const selectedValue = colorSelect.options[colorSelect.selectedIndex];
+	colorSelect.removeChild(selectedValue);
+});
